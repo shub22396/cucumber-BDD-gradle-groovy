@@ -1,0 +1,56 @@
+{
+  "user": "shubhamr",
+  "key": "",
+  "application_endpoint": "https://lambdatest.com",
+  "tests": {
+    "parallel": {
+      "common_caps": {
+        "project": "lambdatest Demo",
+        "build": "App Automation"
+
+      },
+      "env_caps": [
+        {
+          "deviceName": "Galaxy S8+",
+          "platformVersion": "7",
+          "isRealMobile": "true",
+          "app": "lt://APP100202361654784011637855",
+          "platformName": "Android"
+        },
+        {
+          "deviceName": "Galaxy A31",
+          "platformVersion": "10",
+          "isRealMobile": "true",
+          "app": "lt://APP100202361654784011637855",
+          "platformName": "Android"
+        },
+        {
+          "deviceName": "Galaxy S20",
+          "platformVersion": "11",
+          "isRealMobile": "true",
+          "app": "lt://APP100202361654784011637855",
+          "platformName": "Android"
+        }
+      ]
+    },
+
+
+    "single": {
+      "common_caps": {
+
+        "build": "Automate Demo",
+        "name": "Single Test: "
+      },
+      "env_caps": [
+        {
+          "deviceName": "Galaxy S21 5G",
+          "platformVersion": "11",
+          "isRealMobile": "true",
+          "app": "lt://APP100202361654784011637855",
+          "platformName": "Android"
+        }
+      ]
+    }
+
+  }
+}
