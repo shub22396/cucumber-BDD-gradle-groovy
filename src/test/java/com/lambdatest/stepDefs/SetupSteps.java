@@ -31,7 +31,7 @@ public class SetupSteps {
     private static final String URL = "https://ltdemo.com";
     private static final String WEBDRIVER_CHROME_DRIVER = "webdriver.chrome.driver";
     private static final String DOCKER_SELENIUM_HUB_URL = "http://localhost:4444/wd/hub";
-    private static final String BROWSERSTACK_HUB_URL = "https://mobile-hub.lambdatest.com/wd/hub";
+    private static final String LAMBDATEST_HUB_URL = "https://mobile-hub.lambdatest.com/wd/hub";
     private static final String CAPABILITY_CONFIG_FILE = "src/test/resources/conf/caps.json";
     private static final String REPO_NAME = "-examples-cucumber-junit5 - ";
 
@@ -150,9 +150,9 @@ public class SetupSteps {
                 }
             }
 
-            if (caps.getCapability("browserstack.local") != null && caps.getCapability("browserstack.local").equals("true")) {
+            if (caps.getCapability("LAMBDATEST.local") != null && caps.getCapability("LAMBDATEST.local").equals("true")) {
                 String localIdentifier = RandomStringUtils.randomAlphabetic(8);
-                caps.setCapability("browserstack.localIdentifier", localIdentifier);
+                caps.setCapability("LAMBDATEST.localIdentifier", localIdentifier);
                 bstackLocal = new Local();
                 Map<String, String> options = Utility.getLocalOptions(config);
                 System.out.println((String) capabilityObject.get("key"));
