@@ -149,7 +149,7 @@ dependencies {
 dependencies {
     implementation 'org.slf4j:slf4j-api:1.7.30'
     implementation 'ch.qos.logback:logback-classic:1.2.3'
-    implementation 'com.browserstack:browserstack-local-java:1.0.6'
+    
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
     implementation 'org.apache.commons:commons-lang3:3.11'
     implementation 'io.qameta.allure:allure-cucumber6-jvm:2.13.8'
@@ -162,9 +162,9 @@ dependencies {
 
 }
 
-group = 'com.browserstack'
+group = 'com.lambdatest'
 version = '1.0-SNAPSHOT'
-description = 'browserstack-examples-cucumber-junit4'
+description = '-examples-cucumber-junit4'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
@@ -209,7 +209,7 @@ task parallel(type: Test) {
     // dependsOn(":clean")
     // group = "parallel"
     // classpath = sourceSets["test"].runtimeClasspath
-    // main = "com.browserstack.ParallelTest"
+    
     systemProperties System.getProperties()
     systemProperty "caps-type", System.getProperty("caps-type")
     systemProperty "env", System.getProperty("env")
