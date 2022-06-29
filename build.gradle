@@ -205,14 +205,16 @@ task single(type: Test) {
     // System.properties["cucumber.filter.name"] = "End to End Scenario"
     include '**/RunCucumberTests*'
 }
-task parallel(type: Test) {
-    // dependsOn(":clean")
-    // group = "parallel"
-    // classpath = sourceSets["test"].runtimeClasspath
-    
-    systemProperties System.getProperties()
-    systemProperty "caps-type", System.getProperty("caps-type")
-    systemProperty "env", System.getProperty("env")
-    systemProperty("parallel", true)
-    include '**/RunCucumberTests*'
+
+task parallel() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "com.lambdatest.ParallelTest"
+            classpath = sourceSets["test"].runtimeClasspath
+            systemProperty("env", "remote")
+            systemProperty("caps-type", "parallel")
+
+        }
+    }
 }
